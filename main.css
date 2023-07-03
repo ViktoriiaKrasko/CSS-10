@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+
+:root {
+    --first-color: hsl(235, 94%, 55%);
+    --second-color: hsl(61, 77%, 86%);
+
+    --body-font: "Comic Neue", cursive;
+    --normal-font-size: 1.25rem;
+}
+
+/* ========== Normalize ========== */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--second-color);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ========== Button ============ */
+
+.button {
+    position: relative;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: .9rem 2.20rem;
+    border-radius: 3rem;
+    transition: .4s;
+}
+
+.button::after {
+    content: '';
+    width: 80%;
+    height: 40%;
+    background: linear-gradient(80deg, hsl(235, 80%, 80%) 10%, hsl(235, 85%, 70%) 48%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    margin: 0 auto;
+    border-radius: 3rem;
+    filter: blur(12px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.button__text{
+    position: relative;
+    z-index: 10;
+}
+
+.button img{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    pointer-events: none;
+    transition: .6s;
+    opacity: 0;
+}
+
+/* ========= Insects ======== */
+
+.button__insect1{
+    width: 28px;
+    transform: translate(-25px, -6px) rotate (55deg);
+    
+}
+
+.button__insect2{
+    width: 38px;
+    transform: translate(7px, -14px) rotate(80deg);
+}
+
+.button__insect3{
+    width: 36px;
+    transform: translate(34px, -4px) rotate(-45deg);
+}
+
+.button__insect4{
+    width: 50px;
+    transform: translate(-5px, 15px) rotate(40deg);
+}
+
+
+/* ======= Gradient ========= */
+
+.button:hover::after{
+    opacity: 1;
+}
+
+/* ======== Hover ========== */
+
+.button:hover{
+    transform: scale(1.3);
+}
+
+.button:hover img{
+    opacity: 1;
+}
+
+.button:hover .button__insect1{
+    transform: translate(-88px, -30px) scale(1.2);
+}
+
+.button:hover .button__insect2{
+    transform: translate(30px, -42px) scale(1.2);
+}
+
+.button:hover .button__insect3{
+    transform: translate(-75px, 10px) scale(1.2);
+}
+
+.button:hover .button__insect4{
+    transform: translate(74px, 2px) scale(1.2);
+}
+
+
+
+
